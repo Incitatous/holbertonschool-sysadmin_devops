@@ -1,2 +1,2 @@
 #!/bin/bash
-echo {a..o}{a..n} {o..z}{p..z}
+printf "%q\n" {a..n}{a..z} o{a..n} o{p..z} {p..z}{a..z}
