@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-for i in {1}
+for ((i = 0; i < 1; i++))
 do
-    echo | ls | cut -d - -f 2
+    echo | find -maxdepth 1 -type f | cut -d - -f 2 | cut -d / -f 2
 done
