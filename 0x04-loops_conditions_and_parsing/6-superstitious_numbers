@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Printing messages for given num
 i=1
 while [ $i -le 20 ]
 do

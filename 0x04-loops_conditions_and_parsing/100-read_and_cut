@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Display username, group id, path
 i=1
 while [ $i -le 1 ]
 do
