@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-i=1
-while [ $i -le 1 ]
-do
-     echo | cut -d : -f1,3,6 /etc/passwd
-    i=$(( i+1 ))
-done
