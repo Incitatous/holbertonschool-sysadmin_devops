@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# Processes that contain "bash"
 pgrep -l bash
