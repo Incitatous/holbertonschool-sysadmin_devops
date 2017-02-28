@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install nginx web server
+sudo apt-get update
+sudo apt-get -y install nginx
+echo "<title>Ceci n'est pas une page</title><div><img src=\"http://worrydream.com/media/404.jpg\" width=\"800\" height=\"600\"></div>" | sudo tee /usr/share/nginx/html/custom_404.html
+newString="error_page 404 /custom_404.html;\\n location = /custom_404.html {\\n root /usr/share/nginx/html;\\n internal;\\n}"
+myMatch="#error_page 404 /404.html;"
+myFile="/etc/nginx/sites-available/default"
+udo sed -i "s$myMatch $newString" $myFile;
+service nginx start
