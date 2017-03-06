@@ -8,7 +8,7 @@ if [ $# -eq 1 ]
 then
 	for i in "www" "lb-01" "web-01" "web-02"
 	do
-		myDig "$i" "$1"
+		myDig "$1" "$i"
 	done
 elif [ $# -eq 2 ]
 then
