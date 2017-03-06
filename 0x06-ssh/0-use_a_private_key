@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Uses ssh to connect to server
+ssh -i ~/.ssh/holberton.pub ubuntu@54.164.203.121
