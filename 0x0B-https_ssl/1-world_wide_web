@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Displays information about subdomains
 myDig () {
-	dig $2.$1 | grep -A1 'ANSWER SECTION:' | tail -1 | awk 'BEGIN {FS=" "}; {print "The subdomain " $1  " is a " $4  " record and points to " $5}'
+	dig $1.$2 | grep -A1 'ANSWER SECTION:' | tail -1 | awk 'BEGIN {FS=" "}; {print "The subdomain " $1  " is a " $4  " record and points to " $5}'
 }
 
 if [ $# -eq 1 ]
 then
 	for i in "www" "lb-01" "web-01" "web-02"
 	do
-		myDig "$1" "$i"
+		myDig "$i" "$1"
 	done
 elif [ $# -eq 2 ]
 then
-	myDig "$1" "$2"
+	myDig "$2" "$1"
 fi	
