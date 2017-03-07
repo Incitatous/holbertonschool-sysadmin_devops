@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Configures a Ubuntu server
+cp /etc/hosts ~/hosts.new
+sudo sed -i "7i\ 127.0.0.2\tlocalhost" ~/hosts.new
+sudo sed -i "8i\ n8.8.8.8\tfacebook.com" ~/hosts.new
+cp ~/hosts.new /etc/hosts
