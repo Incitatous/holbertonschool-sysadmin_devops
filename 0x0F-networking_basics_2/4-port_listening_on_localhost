@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+netstat -na | grep ':98.*LISTEN'
