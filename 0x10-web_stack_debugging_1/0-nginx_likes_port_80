@@ -1,5 +1,8 @@
 -- Makes Nginx listens on port 80
 #!/usr/bin/env bash
+sudo apt-get update
+sudo apt-get install nginx
+sudo service nginx start
 myVar="$(sudo netstat -lpn | grep :80 | awk '{print $7}' | cut -d '/' -f1 | head -1)"
 sudo kill $myVar
 sudo sed -i '21 s/8080/80/' /etc/nginx/sites-enabled/default
