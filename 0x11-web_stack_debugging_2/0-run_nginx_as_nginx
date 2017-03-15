@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # Makes run as nginx not root
-pkill -9 apache2
-chmod 755 -R /var/log/nginx/
-chmod 755 -R /etc/nginx/
-chown -R nginx /etc/nginx/
-chown -R nginx /var/log/nginx/
-sed -ie "s/listen 80 default_server;/listen 8080 default_server;/" /etc/nginx/sites-enabled/default
-sed -ie "s/listen [::]:80 default_server ipv6only=on;/listen [::]:8080 default_server ipv6only=on;/" /etc/nginx/sites-enabled/default
+pkill apache2
+sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
+chown -R nginx /var/log/nginx/ /etc/nginx/ /usr/share/nginx/
+chmod 755 /etc/nginx/nginx.conf
+su nginx -c nginx
