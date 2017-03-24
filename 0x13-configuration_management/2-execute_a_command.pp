@@ -1,3 +1,4 @@
+# Kills the process killmenow
 exec { 'killmenow':
-  command => 'pkill -f "killmenow"'
+  command => '/usr/bin/pkill -f killmenow'
 }

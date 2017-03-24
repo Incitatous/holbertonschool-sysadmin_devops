@@ -1,3 +1,4 @@
+# Creates a file with puppet
 file { '/tmp/holberton':
   ensure  => file,
   replace => 'no',
