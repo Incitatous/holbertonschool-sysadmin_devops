@@ -19,9 +19,9 @@ if __name__ == "__main__":
     for key in todos:
         total += 1
         if(key['completed'] is True):
-            doneTasks = doneTasks+key['title'] + "\n\t"
+            doneTasks = doneTasks+key['title'] + "\n\t "
             done += 1
 
     print("Employee {:s} is done with tasks({:d}/{:d}):"
           .format(name, done, total))
-    print("\t{:s}".format(doneTasks.rstrip()))
+    print("\t {:s}".format(doneTasks.rstrip()))
