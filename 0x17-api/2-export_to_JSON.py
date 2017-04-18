@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import csv
+    import json
     import requests
     import sys
     givenId = sys.argv[1]
@@ -14,8 +14,6 @@ if __name__ == "__main__":
     todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId=" +
                          str(givenId))
     todos = todos.json()
-    with open(givenId + '.csv', 'w') as csvfile:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+    with open(givenId + '.json', 'w') as jsonfile:
         for key in todos:
-            writer.writerow([givenId, username,
-                            key.get("completed"), key.get("title")])
+            json.dump([givenId, username, key.get("completed"), key.get("title")], jsonfile)
